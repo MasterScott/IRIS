@@ -6,6 +6,23 @@
   A simple way to do OSINT on a username, email, or domain.
   Get results on databreaches, sites the target has used, google dorks that can lead to more infomation and much more.
 
+# How To Use
+```bash
+python3 -m pip install -r requirements.txt
+python3 -m pip install holehe
+python3 main.py
+```
+
+# Basic Search
+```bash
+< Start the program >
+python3 main.py
+
+< Run a WeLeakInfo search on test@gmail.com >
+set target test@gmail.com
+start 2
+```
+
 # Errors
 | Error  | Fix |
 | ------------- | ------------- |
@@ -25,5 +42,7 @@
 | Breach Directory | https://breachdirectory.tk/ | Allows you to search through all public data breaches to make sure your emails, usernames, passwords, and domains haven't been compromised. |
 | IP Leak | https://breachdirectory.com | Search where user ips have been used and get emails, usernames, and other infomation!
 | Username To Email | https://breachdirectory.com | Enter a username and get a email, ip, and where that email has been leaked.
+
+
 ## Credits
-- HellSec, Checksum, Robert, Void, Tsuki, and Zalgo
+  - HellSec, Checksum, Robert, Void, Tsuki, and Zalgo
