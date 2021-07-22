@@ -24,4 +24,4 @@
 | Keybase | Self Made | Grab an email linked to a keybase account just from a username |
 | Breach Directory | https://breachdirectory.tk/ | Allows you to search through all public data breaches to make sure your emails, usernames, passwords, and domains haven't been compromised. |
 ## Credits
-- HellSec / Rpie
+- HellSec, Checksum, Robert, Void, Tsuki, and Zalgo
