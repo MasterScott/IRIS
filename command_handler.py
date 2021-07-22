@@ -7,7 +7,7 @@ def logo():
 \t   ___     _    
 \t  |_ _|_ _(_)___
 \t   | || '_| (_-<  Creator: {Fore.RED}HellSec{Fore.MAGENTA}
-\t  |___|_| |_/__/  Version: {Fore.RED}Developer v3.1.4
+\t  |___|_| |_/__/  Version: {Fore.RED}Public v0.0.8
 {Fore.RESET}
 [1] Keybase
 [2] WeLeakInfo
