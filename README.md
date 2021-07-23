@@ -34,7 +34,7 @@ start 2
 ## Modules
 | Module Name  | API Docs/Link | Infomation |
 | ------------- | ------------- | ------------- |
-| WeLeakInfo  | https://weleak.to  | Used for databreach and leak analysis  |
+| WeLeakInfo  | https://weleakinfo.to  | Used for databreach and leak analysis  |
 | Twitter Data  | Self Made  | Used for grabbing phone numbers and emails off of a Twitter account |
 | Site Scan  | Self Made  | Find sites a user is signed up for using reset password & signup endpoints  |
 | Thatsthem | https://thatsthem.com/ | Get the name, address and phone number associated with an email address | 
