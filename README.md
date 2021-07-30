@@ -25,16 +25,8 @@ start 2
 
 # To Laws
 <img src="https://i.imgur.com/T8S4OrX.png"></img>
-
-# Laws
-```bash
-you
-are
-a
-retard
-please
-stop
-```
+### Don't do this
+<img src="https://cdn.discordapp.com/attachments/870101834231054376/870474102949945364/unknown.png"></img>
 
 
 # Errors
