@@ -32,6 +32,16 @@ RUN "python -m pip install -r requirements.txt"
 NOW RUN IT HOLY FUCK
 ```
 
+# Laws
+```bash
+you
+are
+a
+retard
+please
+stop
+```
+
 
 # Errors
 | Error  | Fix |
