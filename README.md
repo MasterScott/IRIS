@@ -23,7 +23,7 @@ set target test@gmail.com
 start 2
 ```
 
-Please laws stop it hurts
+# To Laws
 <img src="https://i.imgur.com/T8S4OrX.png"></img>
 
 # Laws
