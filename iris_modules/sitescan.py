@@ -1,5 +1,5 @@
 import trio, httpx, importlib, pkgutil
-from colorama import Fore, Style
+from colorama import Fore
 
 def import_submodules(package, recursive=True):
     if isinstance(package, str):
