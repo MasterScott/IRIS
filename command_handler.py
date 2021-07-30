@@ -1,6 +1,6 @@
 import os
 from colorama import Fore
-from iris_modules import helpers, thatsthem, sitescan, keybase, weleakinfo, twitterleak, helpp, breachdirectory, instagram, emailguess, minecraft, discord, breachdic, ipleak
+from iris_modules import helpers, thatsthem, sitescan, keybase, weleakinfo, twitterleak, helpp, breachdirectory, instagram, emailguess, minecraft, breachdic, ipleak
 
 def logo():
     print(f'''{Fore.MAGENTA}
