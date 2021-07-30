@@ -23,14 +23,8 @@ set target test@gmail.com
 start 2
 ```
 
-# RETARDS READ HERE
-```bash
-INSTALL FUCKING PYTHON
-RUN THE INSTALLER
-ADD TO PATH
-RUN "python -m pip install -r requirements.txt"
-NOW RUN IT HOLY FUCK
-```
+Please laws stop it hurts
+<img src="https://i.imgur.com/T8S4OrX.png"></img>
 
 # Laws
 ```bash
