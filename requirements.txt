@@ -1,2 +1,5 @@
 holehe
 requests
+prettytable
+cfscrape
+fake_headers
