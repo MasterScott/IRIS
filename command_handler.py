@@ -1,5 +1,5 @@
 import os
-from colorama import Fore
+from colorama import Fore, Style
 from iris_modules import helpers, thatsthem, sitescan, keybase, weleakinfo, twitterleak, helpp, breachdirectory, instagram, emailguess, minecraft, breachdic, ipleak
 
 def logo():
