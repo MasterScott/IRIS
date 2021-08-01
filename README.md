@@ -23,12 +23,6 @@ set target test@gmail.com
 start 2
 ```
 
-# To Laws
-<img src="https://i.imgur.com/T8S4OrX.png"></img>
-### Don't do this
-<img src="https://cdn.discordapp.com/attachments/870101834231054376/870474102949945364/unknown.png"></img>
-
-
 # Errors
 | Error  | Fix |
 | ------------- | ------------- |
