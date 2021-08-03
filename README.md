@@ -12,4 +12,4 @@ python3 -m iris
 ```
 
 ## Credits
-  - HellSec, Checksum, Robert, Void, Tsuki, and Zalgo
+  - HellSec, Checksum
