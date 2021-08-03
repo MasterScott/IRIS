@@ -1,5 +1,5 @@
 
-# IRIS-OSINT - EZ OSINT
+# IRIS-OSINT
   An Email/User OSINT &amp; Password breach hunting tool, locally or using premium services, with support for many APIS.
 
 ## Infomation on project
@@ -20,7 +20,7 @@ python3 main.py
 
 < Run a WeLeakInfo search on test@gmail.com >
 set target test@gmail.com
-start 2
+start breach
 ```
 
 # Errors
