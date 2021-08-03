@@ -1,6 +1,5 @@
 from colorama import Fore
 
-
 def emailGuess(target, filename):
     guesses = []
 

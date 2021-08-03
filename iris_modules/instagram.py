@@ -34,7 +34,6 @@ def getInfo(target,sessionId):
         infoUser["userID"]=userId["id"]
         return({"user":infoUser,"error":None})
 
-
 def advanced_lookup(target):
     USERS_LOOKUP_URL = 'https://i.instagram.com/api/v1/users/lookup/'
     SIG_KEY_VERSION = '4'

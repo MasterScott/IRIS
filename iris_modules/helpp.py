@@ -21,12 +21,11 @@ mj = [
 
 def logo():
     print(f'''{Fore.MAGENTA}
-\t\t\t\t    ___     _    
-\t\t\t\t   |_ _|_ _(_)___
-\t\t\t\t    | || '_| (_-<
-\t\t\t\t   |___|_| |_/__/
-{Fore.GREEN}
-\t\t\t(The Best OSINT Scanner On The Web)                     
+   ___     _    
+  |_ _|_ _(_)___
+   | || '_| (_-<  Creator: {Fore.RED}HellSec{Fore.MAGENTA}
+  |___|_| |_/__/  Version: {Fore.RED}Developer v3.1.4
+{Fore.RESET}
 ''')
 
 def clear():

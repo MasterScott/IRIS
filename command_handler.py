@@ -1,24 +1,14 @@
-import os
-from colorama import Fore, Style
-from iris_modules import helpers, thatsthem, sitescan, keybase, weleakinfo, twitterleak, helpp, breachdirectory, instagram, emailguess, minecraft, breachdic, ipleak
+import os, threading
+from colorama import Fore
+from iris_modules import helpers, thatsthem, sitescan, keybase, weleakinfo, twitterleak, helpp, breachdirectory, instagram, emailguess, minecraft, discord, breachdic, ipleak
 
 def logo():
     print(f'''{Fore.MAGENTA}
-\t   ___     _    
-\t  |_ _|_ _(_)___
-\t   | || '_| (_-<  Creator: {Fore.RED}HellSec{Fore.MAGENTA}
-\t  |___|_| |_/__/  Version: {Fore.RED}Public v0.0.8
+   ___     _    
+  |_ _|_ _(_)___
+   | || '_| (_-<  Creator: {Fore.RED}HellSec{Fore.MAGENTA}
+  |___|_| |_/__/  Version: {Fore.RED}Public v0.0.9
 {Fore.RESET}
-[1] Keybase
-[2] WeLeakInfo
-[3] Twitter
-[4] Site Scan
-[5] Breach
-[6] Instagram
-[7] Email Breach
-[8] IP Breach
-
-[x] Mass WeLeakInfo
 ''')
 
 def clear():
@@ -34,7 +24,7 @@ def startCommand():
     target = 'None'
     file = 'None'
     while True:
-        command = input(f'{Fore.MAGENTA}•{Fore.RESET} IRIS(target={target}, file={file}) ~# ')
+        command = input(f'{Fore.MAGENTA}•{Fore.RESET} IRIS(target={Fore.RED}{target}{Fore.RESET}, file={Fore.RED}{file}{Fore.RESET}) > ')
 
         if 'set target' in command.lower():
             target = command.split('target')[1].replace(' ', '')
@@ -60,29 +50,64 @@ def startCommand():
             try:
                 module = command.split('start ')[1].replace(' ', '').lower()
 
-                if module.lower() == '1':
+                if module.lower() == 'keybase':
                     keybase.run(target)
-                if module.lower() == '2' or module.lower() == 'wli':
-                    weleakinfo.run(target, False)
-                if module.lower() == 'x':
-                    for target in open(file, 'r').readlines():
+                if module.lower() == 'weleakinfo' or module.lower() == 'wli':
+                    weleakinfo.run(target, False, True, False)
+
+                if module.lower() == 'masswli' or module.lower() == 'x':
+                    count = 0
+                    threads = []
+
+                    if file == '':
+                        file = 'targets.txt'
+
+                    a = open(file, 'r').readlines()
+                    
+                    for target in a:
                         target = target.rstrip()
-                        weleakinfo.run(target, True)
-                        print()
-                if module.lower() == '3':
+                        t = threading.Thread(target=weleakinfo.run, args=(target, True, False, False))
+                        threads.append(t)
+
+                    for x in threads:
+                        count += 1
+                        clear()
+                        print(f'{Fore.YELLOW}•{Fore.RESET} Started {count}/{len(a)} Threads')
+                        x.start()
+
+                    for x in threads:
+                        x.join()
+
+                    print(f'{Fore.GREEN}•{Fore.RESET} Finished Scanning {count}/{len(a)} Targets')
+
+                if module.lower() == 'twitter':
                     twitterleak.run(target)
-                if module.lower() == '4':
+                if module.lower() == 'sitescan':
                     sitescan.run(target)
-                if module.lower() == '5':
+                if module.lower() == 'bd':
                     breachdirectory.run(target)
-                if module.lower() == '6':
+                if module.lower() == 'ig':
                     instagram.run(target)
-                if module.lower() == '7':
+                if module.lower() == 'breach':
                     breachdic.run(target)
-                if module.lower() == '8':
+                if module.lower() == 'ip':
                     ipleak.run(target)
                 if module.lower() == 'discord':
-                    discord.run(target)
+                    count = 0
+                    connections = discord.run(target)
+                    print()
+                    for target in connections:
+                        count += 1
+                        name = target['name']
+                        name = name.rstrip()
+                        typ = target['type']
+                        print(f'{Fore.MAGENTA}•{Fore.RESET} Searching for {name} on {typ}')
+                        weleakinfo.run(name, False, True, False)
+
+                    print(f'{Fore.GREEN}•{Fore.RESET} Finished Scanning {count}/{len(connections)} Targets')
+
+                    target = None
+
                 if module.lower() == 'guess' or module.lower() == 'brute':
                     emailguess.run(target)
 
