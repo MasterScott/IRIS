@@ -42,6 +42,7 @@ start breach
 | Breach Directory | https://breachdirectory.tk/ | Allows you to search through all public data breaches to make sure your emails, usernames, passwords, and domains haven't been compromised. |
 | IP Leak | https://breachdirectory.com | Search where user ips have been used and get emails, usernames, and other infomation!
 | Username To Email | https://breachdirectory.com | Enter a username and get a email, ip, and where that email has been leaked.
+| Minecraft | Custom \ NameMC | Grab user infomation such as email, twitter, github and known names.
 
 
 ## Credits
