@@ -11,5 +11,10 @@
 python3 -m iris
 ```
 
+# Basic Search
+```bash
+use 1 hellsec
+```
+
 ## Credits
   - HellSec, Checksum
