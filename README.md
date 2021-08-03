@@ -11,9 +11,10 @@
 python3 -m iris
 ```
 
-# Basic Search
+# Get Help
 ```bash
-use 1 hellsec
+Mods : See all available modules
+Help : See help menu for new people using IRIS
 ```
 
 ## Credits
