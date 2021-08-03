@@ -2,6 +2,10 @@ import os
 
 
 class DefaultUtil:
-
-    OUT_PATH: str = os.path.join(os.getenv('HOME'), '.iris1', 'local')
+    if os.name == 'nt':
+        path = 'appdata'
+    else:
+        path = 'home'
+    
+    OUT_PATH: str = os.path.join(os.getenv(path), '.iris1', 'local')    
     """ Default output file path """
