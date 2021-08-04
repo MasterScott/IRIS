@@ -10,7 +10,10 @@
 
 # How To Use
 ```bash
-python3 -m iris
+$ pacman -S python3.9
+$ pacman -S python-pip
+$ python3.9 -m pip install -r requirements.txt
+$ python3 -m iris
 ```
 
 # Get Help
