@@ -9,6 +9,7 @@ IRIS is a simple way to do OSINT on a username, email, or domain. Get results on
 **Python 3.9 __IS__ required!**
 #### Windows
 Download IRIS From [Here](https://github.com/IRIS-Team/IRIS/archive/refs/heads/main.zip)
+
 Download [Python 3.9](https://www.python.org/ftp/python/3.9.6/python-3.9.6-amd64.exe)
 
 ```
