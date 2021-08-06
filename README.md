@@ -1,9 +1,10 @@
-![](https://img.shields.io/badge/src-public-green) ![](https://img.shields.io/github/forks//IRIS-Team/IRIS/) ![](https://img.shields.io/github/stars/IRIS-Team/IRIS) ![](https://img.shields.io/github/issues/IRIS-Team/IRIS)
+![](https://img.shields.io/badge/src-public-green) ![](https://img.shields.io/github/forks//IRIS-Team/IRIS/) ![](https://img.shields.io/github/stars/IRIS-Team/IRIS) ![](https://img.shields.io/github/issues/IRIS-Team/IRIS) ![](https://img.shields.io/twitter/follow/IrisDevTeam?style=social)
 
 # 🔍 IRIS OSINT Framework
 
 ## ℹ️ Infomation on project
-IRIS is a simple way to do OSINT on a username, email, or domain. Get results on databreaches, sites the target has used, google dorks that can lead to more infomation and much more.
+IRIS is an open-source OSINT framework, consisting of modules to find information about a target by scraping sites and fetching data from APIs.
+
 
 ## ⚙️ Installation
 **Python 3.9 __IS__ required!**
@@ -29,7 +30,7 @@ cd IRIS/
 python3.9 -m pip install -r requirements.txt
 python3.9 -m iris
 ```
-#### Arch Linux
+#### Linux (Arch)
 ```
 pacman -S python3.9
 pacman -S python-pip
@@ -41,7 +42,18 @@ python3.9 -m pip install -r requirements.txt
 python3 -m iris
 ```
 
+### macOS
+```
+brew install python@3.9
+
+git clone https://github.com/IRIS-Team/IRIS/
+cd IRIS/
+
+pip3 install -r requirements.txt
+python3 -m iris
+```
+
 ## ✨ Contributors
 
 
-Let us know if you have any problems our my [Discord server](https://discord.gg/NBPCseG6g4).
+Let us know if you have any problems on our [Discord server](https://discord.gg/NBPCseG6g4).
