@@ -1,5 +1,6 @@
+![](https://img.shields.io/badge/src-public-green) ![](https://img.shields.io/github/forks//IRIS-Team/IRIS/) ![](https://img.shields.io/github/stars/IRIS-Team/IRIS) ![](https://img.shields.io/github/issues/IRIS-Team/IRIS)
 
-# 🔍 IRIS OSINT Framework ![](https://img.shields.io/badge/src-public-green) ![](https://img.shields.io/github/forks//IRIS-Team/IRIS/) ![](https://img.shields.io/github/stars/IRIS-Team/IRIS) ![](https://img.shields.io/github/issues/IRIS-Team/IRIS)
+# 🔍 IRIS OSINT Framework
 
 ## ℹ️ Infomation on project
 IRIS is a simple way to do OSINT on a username, email, or domain. Get results on databreaches, sites the target has used, google dorks that can lead to more infomation and much more.
