@@ -5,11 +5,11 @@
 IRIS is a simple way to do OSINT on a username, email, or domain. Get results on databreaches, sites the target has used, google dorks that can lead to more infomation and much more.
 
 ## ⚙️ Installation
+**Python 3.9 __IS__ required!**
 #### Windows
 Download IRIS From [Here](https://github.com/IRIS-Team/IRIS/archive/refs/heads/main.zip)
 Download [Python 3.9](https://www.python.org/ftp/python/3.9.6/python-3.9.6-amd64.exe)
 
-***YES IT HAS TO BE PYTHON 3.9***
 ```
 cd DOWNLOAD_LOCATION/IRIS/
 
@@ -42,4 +42,4 @@ python3 -m iris
 ## ✨ Contributors
 
 
-Let me know if you have any problems on my [Discord Server](https://discord.gg/NBPCseG6g4)
+Let us know if you have any problems our my [Discord server](https://discord.gg/NBPCseG6g4).
