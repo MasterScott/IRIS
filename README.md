@@ -2,7 +2,7 @@
 
 # 🔍 IRIS OSINT Framework
 
-## ℹ️ Infomation on project
+## ℹ️ About
 IRIS is an open-source OSINT framework, consisting of modules to find information about a target by scraping sites and fetching data from APIs.
 
 
