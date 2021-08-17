@@ -7,3 +7,6 @@ colorama
 validators
 aiohttp
 kamene
+colorama
+requests
+flask_ngrok
