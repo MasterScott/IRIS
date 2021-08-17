@@ -6,8 +6,7 @@ import re
 from typing import Union
 
 from iris.util import PrintUtil
-from iris.type import Domain
-
+from iris.type import domain
 
 class IRISModule(Module):
 
@@ -15,7 +14,7 @@ class IRISModule(Module):
     author = 'cs'
     date = '25-07-2021'
 
-    def execute(self, domain: Domain):
+    def execute(self, domain: domain):
         server = self.__get_root_server(domain)
 
         if server is None:

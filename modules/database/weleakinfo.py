@@ -1,14 +1,14 @@
 import requests, json
+
 from iris.module import Module
 from iris.util import PrintUtil
 from iris.util import BoxUtil
-
 
 class IRISModule(Module):
 
     description = 'Look up a email or username with the WeLeakInfo API'
     author = 'HellSec'
-    date = '8-04-2021'
+    date = '08-04-2021'
 
     def execute(self, email: str):
         try:
