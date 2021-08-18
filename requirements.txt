@@ -10,3 +10,4 @@ kamene
 colorama
 requests
 flask_ngrok
+trio
