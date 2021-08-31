@@ -135,9 +135,8 @@ class Application:
     @property
     def version(self) -> str:
         """ Get current IRIS version """
-        with open('.version') as f:
-            ver = f.read()
-        return ver
+        with open(os.path.join('data', '.version')) as f:
+            return f.read()
 
     def start(self):
         """ Start application """
@@ -145,7 +144,8 @@ class Application:
         ConsoleUtil.set_title('IRIS v%(version)s by %(author)s')
         ConsoleUtil.print_banner()
 
-        if self._is_up2date() is False and 1 == 0: #! disabled
+        """#! disabled
+        if self._is_up2date() is False and 1 == 0:
             Logger.warning(f'IRIS is not up to date! ({self._get_latest_version()})')
             Logger.nl()
     
@@ -159,6 +159,7 @@ class Application:
 
             ConsoleUtil.clear_screen()
             ConsoleUtil.print_banner()
+        """
 
         self.__shell.start()
 
