@@ -5,7 +5,7 @@ from iris.util import ConsoleUtil
 class ClearCommand(Command):
     name = 'clear'
     description = 'Clear screen'
-    aliases = ['cls']
+    aliases = 'cls',
 
     @Command.execute
     def run(self):

@@ -1,11 +1,11 @@
-import requests, json
+import requests
+import json
+
 from iris.module import Module
 from iris.util import PrintUtil
-from iris.util import BoxUtil
 
 
 class IRISModule(Module):
-
     description = 'Look up an IP address with the Breach Directory API'
     author = 'HellSec'
     date = '08-08-2021'

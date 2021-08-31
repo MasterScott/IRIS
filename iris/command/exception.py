@@ -1,13 +1,13 @@
-class CommandException(Exception):
+class IRISCommandException(Exception):
     """ Command base exception """
     pass
 
 
-class UsageException(CommandException):
+class UsageException(IRISCommandException):
     """ Raised when usage message should be displayed """
     pass
 
 
-class ArgumentValueError(CommandException):
+class ArgumentValueError(IRISCommandException):
     """ Raised when argument value doesn't match argument type """
     pass

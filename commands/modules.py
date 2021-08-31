@@ -1,13 +1,13 @@
+import iris
+
 from iris.command import Command
 from iris.util import BoxUtil
-
-import iris
 
 
 class ModulesCommand(Command):
     name = 'modules'
     description = 'Show modules'
-    aliases = ["mods"]
+    aliases = 'mods',
 
     @Command.execute
     def run(self):

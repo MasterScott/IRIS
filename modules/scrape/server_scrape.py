@@ -1,11 +1,10 @@
-import requests, json
+import requests
+import json
 
 from iris.module import Module
-from iris.util import PrintUtil
 from iris.util import BoxUtil
 
-class irisModule(Module):
-
+class IRISModule(Module):
     description = 'Scrape all members from a Discord server'
     author = 'HellSec'
     date = '08-14-2021'

@@ -6,7 +6,7 @@ from iris.type import IPv4Address
 class IPLookupCommand(Command):
     name = 'iplookup'
     description = 'Lookup IP-address'
-    aliases = ['ipl']
+    aliases = 'ipl',
 
     @Command.execute
     def run(self, ip: IPv4Address):

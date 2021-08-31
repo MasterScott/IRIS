@@ -8,7 +8,6 @@ from iris.util import PrintUtil
 
 
 class IRISModule(Module):
-
     description = 'Get Keybase account information by username'
     author = 'cs'
     date = '10-07-2021'
@@ -67,7 +66,7 @@ class IRISModule(Module):
             'Profile picture'   : profile_picture,
             'Stellar account ID': stellar_acc_id,
             'Devices'           : devices,
-            'Public key'        : public_key
+            #'Public key'        : public_key
         })
 
     def __get_emails_from_public_key(self, public_key):

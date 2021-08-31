@@ -2,7 +2,6 @@ requests
 cfscrape
 fake_headers
 bs4
-netifaces
 colorama
 validators
 aiohttp

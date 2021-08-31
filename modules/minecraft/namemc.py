@@ -7,7 +7,6 @@ from iris.util import PrintUtil
 
 
 class IRISModule(Module):
-
     description = 'Get NameMC profile information by Minecraft username/UUID'
     author = 'cs'
     date = '14-07-2021'
@@ -98,7 +97,7 @@ class IRISModule(Module):
         else:
             uuid = None
 
-        profile_information.update({'username': username, 'uuid': uuid, 'profile_link': profile_link, 'monthly_viewers': monthly_views})
+        profile_information |= {'username': username, 'uuid': uuid, 'profile_link': profile_link, 'monthly_viewers': monthly_views}
 
         for div_html in soup.find_all('div', {'class': 'card mb-3'}):
             title_html = div_html.find('strong')
@@ -126,7 +125,7 @@ class IRISModule(Module):
                 discord_html = div_html.find('a', {'title': 'Discord'})
                 discord = discord_html.get('data-content') if discord_html is not None else None
 
-                profile_information.update({'rank': rank, 'location': location, 'discord': discord, 'social_media': {}})
+                profile_information |= {'rank': rank, 'location': location, 'discord': discord, 'social_media': {}}
 
                 # * get social media
                 for social_media_name in SOCIAL_MEDIA:
@@ -135,6 +134,6 @@ class IRISModule(Module):
                     if social_media_elem:
                         social_media_profile = social_media_elem.get('href').split('?')[0]
 
-                        profile_information['social_media'].update({social_media_name.lower(): social_media_profile})
+                        profile_information['social_media'] |= {social_media_name.lower(): social_media_profile}
 
         return profile_information

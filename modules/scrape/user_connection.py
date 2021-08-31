@@ -1,10 +1,13 @@
-import requests, json
+import requests
+import json
+import iris
+
 from iris.module import Module
 from iris.logger import Logger
 from iris.util import BoxUtil
 
-class irisModule(Module):
 
+class IRISModule(Module):
     description = 'Grab all connections a user may have and search for databreaches.'
     author = 'HellSec'
     date = '08-11-2021'
@@ -16,7 +19,7 @@ class irisModule(Module):
 
         formated = requests.get(url=endpoint, headers={'authorization': json.load(open('config.json'))['discord_token']}).json()
 
-        apiKey   = json.load(open('config.json'))['weleakinfo_key']
+        apiKey   = iris.__app__.config.APIKeys.weleakinfo
 
         username = formated['user']['username']+'#'+formated['user']['discriminator']
         accounts = formated['connected_accounts']

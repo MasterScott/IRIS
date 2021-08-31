@@ -6,8 +6,8 @@ import iris
 class CreditsCommand(Command):
     name = 'credits'
     description = 'Show IRIS OSINT Framework credits'
-    aliases = ['credit']
-    
+    aliases = 'credit', 'info', 'about'
+
     @Command.execute
     def run(self):
         print(rf'''

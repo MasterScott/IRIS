@@ -9,16 +9,6 @@ import iris
 
 class ConsoleUtil:
     __BANNER = '''
-         \x1b[91m##
-       \x1b[91m##\x1b[93m##\x1b[91m##
-     \x1b[91m##\x1b[93m##\x1b[94m##\x1b[93m##\x1b[91m##
-   \x1b[91m##\x1b[93m##\x1b[94m##\x1b[0m##\x1b[94m##\x1b[93m##\x1b[91m##   \x1b[97mIRIS \x1b[94mv%(version)s \x1b[0mby \x1b[92m%(author)s
-   \x1b[91m##\x1b[93m##\x1b[94m##\x1b[0m##\x1b[94m##\x1b[93m##\x1b[91m##   \x1b[90mAn open-source intelligence framework.
-     \x1b[91m##\x1b[93m##\x1b[94m##\x1b[93m##\x1b[91m##
-       \x1b[91m##\x1b[93m##\x1b[91m##
-         \x1b[91m##\x1b[0m
-'''
-    __BANNER = '''
   \x1b[96m┬  ┬─┐  ┬  ┌─┐  
   \x1b[96m│  ├┬┘  │  └─┐  \x1b[0mrevamped by %(author)s\x1b[0m
   \x1b[96m┴  ┴└─  ┴  └─┘  \x1b[90m@IrisDevTeam

@@ -8,7 +8,6 @@ from iris.logger import Logger
 
 
 class IRISModule(Module):
-
     description = 'Lookup Danish citizens\' personal information by name/address/phone number'
     author = 'cs'
     date = '26-07-2021'

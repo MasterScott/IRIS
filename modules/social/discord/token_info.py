@@ -10,7 +10,6 @@ from iris.type import DiscordToken
 
 
 class IRISModule(Module):
-
     description = 'Get Discord account information by token'
     author = 'cs'
     date = '11-07-2021'

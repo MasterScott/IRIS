@@ -7,7 +7,6 @@ from iris.util import PrintUtil
 
 
 class IRISModule(Module):
-
     description = 'Get Plancke account information by Minecraft username/UUID'
     author = 'cs'
     date = '10-07-2021'
@@ -32,14 +31,14 @@ class IRISModule(Module):
         # * get profile link
         profile_link = res.url
 
-        profile.update({'profile_link': profile_link})
+        profile |= {'profile_link': profile_link}
 
         # * get username
         title_html = soup.find('title')
         username_re = re.search(r'(.+?)\'(s|) Stats', title_html.string)
         username = username_re.group(1).strip().strip(' ')
 
-        profile.update({'username': username})
+        profile |= {'username': username}
 
         # * get social media
         for social_media_name in SOCIAL_MEDIA:
@@ -49,7 +48,7 @@ class IRISModule(Module):
                 social_media_url = a_html.get('href')
 
                 if social_media_url:
-                    profile['social_media'].update({social_media_name.lower(): social_media_url})
+                    profile['social_media'] |= {social_media_name.lower(): social_media_url}
 
         for x in soup.find_all('script'):
             if x.string:
@@ -59,14 +58,14 @@ class IRISModule(Module):
 
                 if discord_re:
                     discord = discord_re.group(1)
-                    profile.update({'discord': discord})
+                    profile |= {'discord': discord}
 
                 # * get uuid    
                 uuid_re = re.search(r'var uuid = \'(.+?)\';', x.string)
 
-                if uuid_re:
+                if uuid_re is not None:
                     uuid = uuid_re.group(1)
-                    profile.update({'uuid': uuid})
+                    profile |= {'uuid': uuid}
 
         profile_social_media = profile.get('social_media', {})
         social_media = [[profile_social_media[x], x] for x in profile_social_media] if profile_social_media else []

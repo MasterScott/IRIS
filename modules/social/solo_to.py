@@ -6,7 +6,6 @@ from iris.util import PrintUtil, HTMLUtil
 
 
 class IRISModule(Module):
-
     description = 'Get social media profiles on solo.to by username'
     author = 'cs'
     date = '28-07-2021'

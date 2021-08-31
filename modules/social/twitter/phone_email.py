@@ -4,7 +4,6 @@ from requests.adapters import HTTPAdapter
 from urllib3.util.ssl_ import create_urllib3_context
 from fake_headers import Headers
 from colorama import Fore
-from re import findall
 
 from urllib3.util.ssl_ import create_urllib3_context
 
@@ -13,9 +12,8 @@ from iris.util import PrintUtil
 
 
 class IRISModule(Module):
-
     description = 'Get Twitter account email and phone number from username'
-    author = 'cs & HellSec'
+    author = 'HellSec, cs'
     date = '08-04-2021'
 
     def execute(self, target: str):

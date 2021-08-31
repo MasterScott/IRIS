@@ -1,10 +1,12 @@
-import requests, json
+import requests
+import json
+import iris
+
 from iris.module import Module
 from iris.util import PrintUtil
 
 
 class IRISModule(Module):
-
     description = 'Lookup using all API\'s that are available, WLI, BD, And Breacher'
     author = 'HellSec'
     date = '08-11-2021'
@@ -45,7 +47,7 @@ class IRISModule(Module):
 
 
         try:
-            apiKey = json.load(open('config.json'))['weleakinfo_key']
+            apiKey = iris.__app__.config.APIKeys.weleakinfo
 
             r = requests.get(f'https://api.weleakinfo.to/api?value={email}&type=email&key={apiKey}').json()
             for x in r['result']:

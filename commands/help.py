@@ -6,8 +6,8 @@ from iris.logger import Logger
 class HelpCommand(Command):
     name = 'help'
     description = 'Show list of available commands'
-    aliases = ['?']
-    
+    aliases = '?',
+
     @Command.execute
     def run(self):
         BoxUtil.boxify(

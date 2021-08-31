@@ -1,28 +1,31 @@
-import requests, json
-import trio, httpx, importlib, pkgutil
+import trio
+import httpx
+import importlib
+import pkgutil
+
 from iris.module import Module
 from iris.util import PrintUtil
-from iris.util import BoxUtil
 
 
 class IRISModule(Module):
-
     description = 'Look up a email or username with the WeLeakInfo API'
     author = 'HellSec'
     date = '08-04-2021'
 
     def execute(self, target: str):
-
-
         def import_submodules(package, recursive=True):
             if isinstance(package, str):
                 package = importlib.import_module(package)
+
             results = {}
-            for loader, name, is_pkg in pkgutil.walk_packages(package.__path__):
+
+            for _, name, is_pkg in pkgutil.walk_packages(package.__path__):
                 full_name = package.__name__ + "." + name
                 results[full_name] = importlib.import_module(full_name)
+
                 if recursive and is_pkg:
-                    results.update(import_submodules(full_name))
+                    results |= import_submodules(full_name)
+
             return results
 
         def get_functions(modules, args=None):
@@ -33,6 +36,7 @@ class IRISModule(Module):
                     modu = modules[module]
                     site = module.split(".")[-1]
                     websites.append(modu.__dict__[site])
+
             return websites
 
         async def launch_module(module, email, client, out):

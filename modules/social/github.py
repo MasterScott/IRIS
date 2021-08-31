@@ -5,7 +5,6 @@ from iris.util import PrintUtil
 
 
 class IRISModule(Module):
-
     description = 'Get GitHub account information by username'
     author = 'cs'
     date = '10-07-2021'
@@ -23,7 +22,7 @@ class IRISModule(Module):
             'Handle'        : profile.get('login'),
             'ID'            : profile.get('id'),
             'Company'       : profile.get('company'),
-            'Website'       : 'http://' + profile.get('blog').lower() if profile.get('blog') else None,
+            'Website'       : f'http://{blog.lower()}' if (blog := profile.get('blog')) else None,
             'Location'      : profile.get('location'),
             'Email'         : profile.get('email'),
             'Bio'           : profile.get('bio').replace('\n', '\\n') if profile.get('bio') else None,

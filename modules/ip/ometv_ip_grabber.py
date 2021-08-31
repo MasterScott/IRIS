@@ -4,16 +4,14 @@ import kamene.all as kamene
 
 from iris.module import Module
 from iris.util import GeoIP
-from iris.type import NetworkInterface
 
 
 class IRISModule(Module):
-
     description = 'Grab IP-addresses on Ome.TV'
     author = 'cs'
     date = '27-07-2021'
 
-    def execute(self, network_interface: NetworkInterface):
+    def execute(self, network_interface: str):
         self.__cached_user_ids = []
 
         print(f'\n{"IP-address":<15} {"Port":<5} {"User ID":<9} {"Time":<8} Location')

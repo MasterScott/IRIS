@@ -16,7 +16,7 @@ class PrintUtil:
 
         for key, value in _dict.items():
             key += '.' * (max_key_len - len(key))
-            result.update({key: value})
+            result |= {key: value}
 
         return result
 

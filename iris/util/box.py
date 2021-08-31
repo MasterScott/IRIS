@@ -97,7 +97,7 @@ class BoxUtil:
             for dict_item in iterator:
                 _dict_item = {}
                 for k, v in dict_item.items():
-                    _dict_item.update({str(k): str(v)})
+                    _dict_item |= {str(k): str(v)}
                 items.append(_dict_item)
 
             # get the maximum amount of entries in the dictionary list

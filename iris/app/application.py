@@ -1,17 +1,39 @@
+import configparser
 import importlib
+import requests
 import inspect
 import sys
 import os
 
 from typing import Union
 
-from iris.logger import Logger
 from iris.module import Module, ModuleWrapper
-from iris.command import Shell
 from iris.util import PathUtil, ConsoleUtil
+from iris.command import Shell
+from iris.logger import Logger
 
 
 class Application:
+
+    class __ConfigManager:
+        """ Used to manage IRIS configuration """
+
+        def __init__(self, filepath: str):
+            config_parser = configparser.ConfigParser()
+            config_parser.read(filepath)
+
+            class __ConfigObject: pass
+
+            for s in config_parser.sections():
+                o = __ConfigObject()
+
+                for k, v in config_parser[s].items():
+                    o.__setattr__(k, v)
+
+                setattr(self, s, o)
+
+        def __getattr__(self, attrb: str) -> Union[object, str]:
+            return getattr(self, attrb) if hasattr(self, attrb) is True else ''
 
     class __ModuleManager:
         """ Used to manage IRIS modules """
@@ -93,16 +115,29 @@ class Application:
             colorama.init(convert=True)
 
         self.__shell = Shell('\x1b[94m➜\x1b[0m ')
+        self.__shell.command_manager.register_commands_from_path('commands')
 
         self.__module_manager = self.__ModuleManager()
         self.__module_manager.register_modules_from_path('modules')
 
-        self.__shell.command_manager.register_commands_from_path(os.path.join('iris', 'command', 'impl'))
+        self.__config = self.__ConfigManager('config.ini')
 
     @property
     def modules(self):
         """ Get module manager """
         return self.__module_manager
+
+    @property
+    def config(self):
+        """ Get config manager """
+        return self.__config
+
+    @property
+    def version(self) -> str:
+        """ Get current IRIS version """
+        with open('.version') as f:
+            ver = f.read()
+        return ver
 
     def start(self):
         """ Start application """
@@ -110,4 +145,39 @@ class Application:
         ConsoleUtil.set_title('IRIS v%(version)s by %(author)s')
         ConsoleUtil.print_banner()
 
+        if self._is_up2date() is False and 1 == 0: #! disabled
+            Logger.warning(f'IRIS is not up to date! ({self._get_latest_version()})')
+            Logger.nl()
+    
+            Logger.info('Please run: \x1b[94mpip install iris --upgrade\x1b[0m to install the latest version of IRIS OSINT Framework.')
+            Logger.nl()
+
+            dont_exit = ConsoleUtil.yn_prompt('\x1b[95m• \x1b[0mContinue? (Y/n): ') is True
+
+            if dont_exit is False:
+                sys.exit(0)
+
+            ConsoleUtil.clear_screen()
+            ConsoleUtil.print_banner()
+
         self.__shell.start()
+
+    def _is_up2date(self) -> bool:
+        """ Check if IRIS is up to date """
+        latest_version = self._get_latest_version()
+
+        if len(latest_version) == 0:
+            return False
+
+        return latest_version == self.version
+
+    def _get_latest_version(self):
+        try:
+            res = requests.get('https://raw.githubusercontent.com/IRIS-Team/IRIS/main/data/.version')
+
+            if res.status_code == 200:
+                return res.text
+        except Exception:
+            pass
+
+        return ''

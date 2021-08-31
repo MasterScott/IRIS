@@ -1,15 +1,14 @@
-from iris.module import Module
-
 import socket
 import re
 
 from typing import Union
 
+from iris.module import Module
 from iris.util import PrintUtil
 from iris.type import domain
 
-class IRISModule(Module):
 
+class IRISModule(Module):
     description = 'Lookup name and address by domain name'
     author = 'cs'
     date = '25-07-2021'
@@ -91,6 +90,6 @@ class IRISModule(Module):
             if ':' in line:
                 key, value = line.split(':', 1)
 
-                json_answer.update({key.lower(): value.lstrip(' ')})
+                json_answer |= {key.lower(): value.lstrip(' ')}
 
         return json_answer

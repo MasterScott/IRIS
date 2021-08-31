@@ -1,7 +1,7 @@
-from iris.command import Command
-from iris.command.exception import UsageException
-
 import iris
+
+from iris.command import Command
+from iris.command.exception import UsageException, ArgumentValueError
 
 
 def custom_usage_decorator(fn):
@@ -20,8 +20,7 @@ def custom_usage_decorator(fn):
                 try:
                     mod_param_type(mod_param_value)
                 except ValueError:
-                    raise ValueError('Invalid value for argument \'%s\'. Was expecting type \'%s\'' % (mod_param_name, mod_param_type.__name__))
-
+                    raise ArgumentValueError('Invalid value for argument \'%s\'. Was expecting type \'%s\'' % (mod_param_name, mod_param_type.__name__))
         return fn(*fn_args)
     return _wrapper
 
@@ -29,7 +28,7 @@ def custom_usage_decorator(fn):
 class UseCommand(Command):
     name = 'use'
     description = 'Use module'
-    aliases = ['select', 'pick', 'run', 'execute']
+    aliases = 'select', 'pick', 'run', 'execute'
 
     @custom_usage_decorator
     @Command.execute

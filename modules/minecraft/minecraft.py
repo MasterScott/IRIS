@@ -1,15 +1,13 @@
-from iris.module import Module
-
 import requests
 import datetime
 import base64
 import json
 
+from iris.module import Module
 from iris.util import UUIDUtil, PrintUtil
 
 
 class IRISModule(Module):
-
     description = 'Get Minecraft account information by username/UUID'
     author = 'cs'
     date = '10-07-2021'

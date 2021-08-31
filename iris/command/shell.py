@@ -99,10 +99,6 @@ class Shell:
                     if cmd is not None:
                         try:
                             no_newline = cmd.run(*cmd_args)
-        
-                            if cmd.exit is True:
-                                cmd.exit = False
-                                break
 
                             if not no_newline:
                                 Logger.nl()
