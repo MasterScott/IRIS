@@ -56,4 +56,4 @@ python3 -m iris
 ## ✨ Contributors
 
 
-Let us know if you have any problems on our [Discord server](https://discord.gg/NBPCseG6g4).
+Let us know if you have any problems on our [Discord server](https://discord.gg/lite).
